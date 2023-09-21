@@ -164,8 +164,6 @@ a {
     }
 
     &-item {
-      // display: flex;
-      // align-items: center;
       margin-right: 30px;
       cursor: pointer;
 
@@ -261,7 +259,6 @@ a {
   & > img {
       display: block;
       max-width: 1200px;
-      // height: 600px;
       object-fit: cover;
       object-position: center;
 
@@ -435,10 +432,6 @@ a {
   }
 
   &-img > img {
-    // box-sizing: border-box;
-    // @include forTablet {
-    //   max-width: 100%;
-    // }
 
     @include forDesktop {
       max-width: 100%;
@@ -492,11 +485,6 @@ a {
   &-info {
     width: 215px;
 
-    // @include forMobile {
-    //   width: 100px;
-    //   padding: 0 12px;
-    // }
-
     display: flex;
     flex-direction: column;
 
@@ -519,7 +507,6 @@ a {
       position: relative;
       top: -6em;
 
-      // @include flexCenter;
       justify-content: space-between;
       flex-direction: row;
 
@@ -551,10 +538,6 @@ a {
 .top-theme {
   @include forStyle(14px, 21px, 300);
   @include forMixStyle('Gilroy', normal, capitalize, $text-color);
-
-  // @include forDesktop {
-  //   display: none;
-  // }
 
   @include forTablet {
     display: none;
@@ -609,11 +592,9 @@ a {
   @include forStyle(16px, 24px, 500);
   @include forMixStyle('Gilroy', normal, capitalize, $text-color);
 
-  // padding: 20px 150px;
   width: 365px;
   height: 75px;
   border: none;
-  // border-radius: 5px;
   cursor: pointer;
 
   background-color: #FBCA35;
@@ -667,13 +648,6 @@ a {
     @include forStyle(14px, 21.2px, 500);
   }
 }
-
-// .ticket-address,
-// .ticket-address-text {
-//   @include forMobile {
-//     display: none;
-//   }
-// }
 
 .footer {
   &__container {
@@ -753,7 +727,6 @@ a {
     }
 
     &-name {
-      // max-width: 90px;
       @include forTablet {
         max-width: 70px;
         margin-bottom: 5px;
@@ -922,16 +895,16 @@ a {
   }
 }
 
-// .footer__nav.about-us {
-//   margin-bottom: 80px;
-// }
-
 .contact-number,
 .contact-email,
 .contact-address {
   margin-bottom: 20px;
 
   max-width: 55%;
+
+  @include forMobile {
+    max-width: 70%;
+  }
 }
 
 .contact-number__text,
