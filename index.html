@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./dist/css/style.css">
+  <title>Lakatum</title>
+  <link rel="shortcut icon" href="./images/logo_footer.png" />
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header__logo">
+        <div class="header__logo-img">
+          <a href="index.html">
+            <img src="./images/logo.png" alt="Lakatum">
+          </a>
+        </div>
+        <div class="header__logo-name">
+          <a href="index.html">
+            <p class="logo__name-bold">Lakatum</p>  
+            <p class="logo__name-gray">Production</p>
+          </a>
+        </div>
+      </div>
+      <div class="header__lang">
+        <span class="header__lang-text">Язык:</span>
+        <select class="header__lang-option">
+          <option value="ru">Русский</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+      <nav class="header__nav">
+        <ul class="header__nav__list">
+          <li class="header__nav__list-item">
+            <a href="index.html" class="header__nav__list-link">Кассы</a>
+          </li>
+          <li class="header__nav__list-item">
+            <a href="galery.html" class="header__nav__list-link">Фотогалерея</a>
+          </li>
+          <li class="header__nav__list-item">
+            <a href="contact.html" class="header__nav__list-link">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="header__icons">
+        <div class="header__icons-item">
+          <img 
+            class="header__icons-item-search" 
+            src="./images/magnifying-glass.png" 
+            alt="Search"
+          >
+        </div>
+        <div class="header__icons-item">
+          <a href="#" target="__blank">
+            <img 
+              class="header__icons-item-shop"
+              src="./images/shopping-bag.png"
+              alt="Shopping"
+            >
+          </a>
+        </div>
+        <div class="header__icons-item">
+          <img
+            class="header__icons-item-user"
+            src="./images/user.png"
+            alt="User"
+          >
+        </div>
+        <div class="header__icons-item">
+          <span class="header__icons-item-trigram">&#9776;</span>
+        </div>
+      </div>
+    </header>
+
+    <hr class="hr">
+
+    <div class="slider__container" aria-label="Slider 1">
+      <div class="carousel" data-carousel>
+        <button class="carousel-button prev" data-carousel-button="prev">&#8249;</button>
+        <button class="carousel-button next" data-carousel-button="next">&#8250;</button>
+        <ul data-slides>
+          <li class="slider" data-active>
+            <img src="./images/slide1.jpg" alt="Slide 1">
+          </li>
+          <li class="slider">
+            <img src="./images/slide2.jpg" alt="Slide 2">
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="main">
+      <section class="section__header">
+        <h2 class="section__header-theme">
+          Каталог <span class="section__header-theme-ave">ожидаемых</span> мероприятий
+        </h2>
+      </section>
+
+      <section class="section__filter">
+        <nav class="section__filter-nav">
+          <ul class="section__filter-nav-list">
+            <li class="section__filter-nav-item active">ВСЕ</li>
+            <li class="section__filter-nav-item">КОНЦЕРТЫ</li>
+            <li class="section__filter-nav-item">ТЕАТРЫ</li>
+            <li class="section__filter-nav-item">ШОУ</li>
+            <li class="section__filter-nav-item">ТРЕНИНГИ</li>
+            <li class="section__filter-nav-item">СПОРТ</li>
+            <li class="section__filter-nav-item">ФЕСТИВАЛИ</li>
+            <li class="section__filter-nav-item">ЮМОР</li>
+          </ul>
+        </nav>
+      </section>
+
+      <section class="section__article">
+        <div class="section__article-img">
+          <img src="./images/Delphines.jpg" alt="Delphines">
+        </div>
+        <div class="section__article-theme">
+          <h5 class="top-theme">Шоу</h5>
+          <h3 class="main-theme">Шоу с дельфинами</h3>
+          <p class="bottom-text">Дельфины — одни из самых умных существ 
+            на планете. И теперь вы можете увидеть их 
+            в дельфинарии  «Немо» в парке Ашхабад.
+          </p>
+          <br>
+          <p class="bottom-text">Специальные программы для   детей, уникальные шоу и веселые фотосессии 
+          с морскими обитателями ждут вас в дельфинарии!
+          </p>
+          <button class="order-ticket-btn">Заказать</button>
+        </div>
+        <div class="section__article-line"></div>
+        <div class="section__article-info">
+          <div class="section__article-block info">
+            <p class="ticket-date-text">Дата:</p>
+            <p class="ticket-date">07.09.2019</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-time-text">Время:</p>
+            <p class="ticket-time">в 15:00</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-price-text">Цена:</p>
+            <p class="ticket-price">50 000 сум</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-address-text">Место:</p>
+            <p class="ticket-address">Парк Ашхабат, Дельфинарий немо</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section__article">
+        <div class="section__article-img">
+          <img src="./images/soundtrack.jpg" alt="Soundtrack">
+        </div>
+        <div class="section__article-theme">
+          <h5 class="top-theme">Фестивали</h5>
+          <h3 class="main-theme">Soundtrack - Symphony</h3>
+          <p class="bottom-text">На летней площадке Дворца искусств "Туркистон" состоится концерт в исполнении заслуженного коллектива национального симфонического оркестра.
+          </p>
+          <br>
+          <p class="bottom-text">В программе прозвучат саундтреки из кинофильмов–лауреатов премии Oscar.
+          </p>
+          <button class="order-ticket-btn">Заказать</button>
+        </div>
+        <div class="section__article-line"></div>
+        <div class="section__article-info">
+          <div class="section__article-block info">
+            <p class="ticket-date-text">Дата:</p>
+            <p class="ticket-date">19.09.2019</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-time-text">Время:</p>
+            <p class="ticket-time">в 19:00</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-price-text">Цена:</p>
+            <p class="ticket-price">от 55 000 сум</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-address-text">Место:</p>
+            <p class="ticket-address">Концертный Зал "Туркистон"</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section__article">
+        <div class="section__article-img">
+          <img src="./images/baraban.jpg" alt="Baraban">
+        </div>
+        <div class="section__article-theme">
+          <h5 class="top-theme">Театры</h5>
+          <h3 class="main-theme">Жестяной барабан</h3>
+          <p class="bottom-text">Спектакль создан по дноименному роману, принесшему мировую известность лауреату Нобелевской премии немецкому писателю Гюнтеру Грассу.</p>
+          <br>
+          <p class="bottom-text">А фильм с одноименным названием стал обладателем множества наград, в числе которых «Оскар» и «Золотая пальмовая ветвь»</p>
+          <button class="order-ticket-btn">Заказать</button>
+        </div>
+        <div class="section__article-line"></div>
+        <div class="section__article-info">
+          <div class="section__article-block info">
+            <p class="ticket-date-text">Дата:</p>
+            <p class="ticket-date">28.09.2019</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-time-text">Время:</p>
+            <p class="ticket-time">в 18:30</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-price-text">Цена:</p>
+            <p class="ticket-price">от 41 000 сум</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-address-text">Место:</p>
+            <p class="ticket-address">Театр "Ильхом"</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section__article">
+        <div class="section__article-img">
+          <img src="./images/Nik.jpg" alt="Nik Vuychich">
+        </div>
+        <div class="section__article-theme">
+          <h5 class="top-theme">Тренинги</h5>
+          <h3 class="main-theme">Форум “Жизнь без границ”</h3>
+          <p class="bottom-text">Представляем Вашему вниманию «Форум Без Границ», где примут участие лучшие спикеры мирового уровня.
+          </p>
+          <br>
+          <p class="bottom-text">Научитесь мечтать «по-крупному» и воплощать свои мечты в реальность. Избавьтесь от внутренних ограничений и страхов.</p>
+          <button class="order-ticket-btn">Заказать</button>
+        </div>
+        <div class="section__article-line"></div>
+        <div class="section__article-info">
+          <div class="section__article-block info">
+            <p class="ticket-date-text">Дата:</p>
+            <p class="ticket-date">14.09.2019</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-time-text">Время:</p>
+            <p class="ticket-time">в 11:00</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-price-text">Цена:</p>
+            <p class="ticket-price">от 150 000 сум</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-address-text">Место:</p>
+            <p class="ticket-address">Государственный теннисный клуб</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section__article">
+        <div class="section__article-img">
+          <img src="./images/hockey.jpg" alt="Hockey">
+        </div>
+        <div class="section__article-theme">
+          <h5 class="top-theme">Cпорт</h5>
+          <h3 class="main-theme">Высшая Хоккейная Лига</h3>
+          <p class="bottom-text">Представляем Вашему вниманию «Форум Без Границ», где примут участие лучшие спикеры мирового уровня.</p>
+          <br>
+          <p class="bottom-text">Научитесь мечтать «по-крупному» и воплощать свои мечты в реальность. Избавьтесь от внутренних ограничений и страхов.</p>
+          <button class="order-ticket-btn">Заказать</button>
+        </div>
+        <div class="section__article-line"></div>
+        <div class="section__article-info">
+          <div class="section__article-block info">
+            <p class="ticket-date-text">Дата:</p>
+            <p class="ticket-date">11.09.2019</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-time-text">Время:</p>
+            <p class="ticket-time">в 19:30</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-price-text">Цена:</p>
+            <p class="ticket-price">от 10 000 сум</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-address-text">Место:</p>
+            <p class="ticket-address">Хумо Арена</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section__article">
+        <div class="section__article-img">
+          <img src="./images/pevets.jpg" alt="Filipp">
+        </div>
+        <div class="section__article-theme">
+          <h5 class="top-theme">Концерты</h5>
+          <h3 class="main-theme">Филлип Киркоров</h3>
+          <p class="bottom-text">В преддверии Нового года, король российского шоу-бизнеса представит свою сольную шоу-программу под названием "The Best"</p>
+          <br>
+          <p class="bottom-text">На сцене Ташкентского Ледового Дворца "Humo Arena". Зрителей ожидают его лучшие исполнения, попавшие в хит-парады СНГ.</p>
+          <button class="order-ticket-btn">Заказать</button>
+        </div>
+        <div class="section__article-line"></div>
+        <div class="section__article-info">
+          <div class="section__article-block info">
+            <p class="ticket-date-text">Дата:</p>
+            <p class="ticket-date">18.12.2019</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-time-text">Время:</p>
+            <p class="ticket-time">в 19:00</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-price-text">Цена:</p>
+            <p class="ticket-price">от 90 000 сум</p>
+          </div>
+          <div class="section__article-block info">
+            <p class="ticket-address-text">Место:</p>
+            <p class="ticket-address">Хумо Арена</p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__column">
+        <div class="footer__logo">
+          <div class="footer__logo-img">
+            <a href="index.html">
+              <img src="./images/logo_footer.png" alt="Lakatum">
+            </a>
+          </div>
+          <div class="footer__logo-name">
+            <a href="index.html">
+              <p class="logo__name-bold">Lakatum</p>  
+              <p class="logo__name-gray">Production</p>
+            </a>
+          </div>
+        </div>
+        <div class="social__media">
+          <p class="facebook">
+            <a href="#">facebook</a>
+          </p>
+          <p class="instagram">
+            <a href="#">instagram</a>
+          </p>
+        </div>
+      </div>
+      <div class="footer__nav about-us">
+        <ul class="footer__nav__list">
+          <li class="footer__nav__list-item">
+            <a href="index.html" class="footer__nav__list-link theme">О нас</a>
+          </li>
+          <li class="footer__nav__list-item">
+            <a href="galery.html" class="footer__nav__list-link">Места</a>
+          </li>
+          <li class="footer__nav__list-item">
+            <a href="contact.html" class="footer__nav__list-link">О компании</a>
+          </li>
+          <li class="footer__nav__list-item">
+            <a href="contact.html" class="footer__nav__list-link">Кассы</a>
+          </li>
+          <li class="footer__nav__list-item">
+            <a href="contact.html" class="footer__nav__list-link">Публичная оферта</a>
+          </li>
+        </ul>
+
+        <div class="footer__payment">
+          <img class="footer__payment-payme" src="./images/payme.png" alt="Payme">
+          <img src="./images/click.png" alt="Click">
+        </div>
+      </div>
+
+      <div class="footer__nav how-to-buy">
+        <ul class="footer__nav__list">
+          <li class="footer__nav__list-item">
+            <a href="index.html" class="footer__nav__list-link theme">Как купить</a>
+          </li>
+          <li class="footer__nav__list-item">
+            <a href="galery.html" class="footer__nav__list-link">Часто задаваемые вопросы</a>
+          </li>
+          <li class="footer__nav__list-item">
+            <a href="contact.html" class="footer__nav__list-link">Возврат и обмен</a>
+          </li>
+          <li class="footer__nav__list-item">
+            <a href="contact.html" class="footer__nav__list-link">Электронный билет</a>
+          </li>
+          <li class="footer__nav__list-item">
+            <a href="contact.html" class="footer__nav__list-link">Правила и условия</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="footer__contact">
+        <div class="contact-number">
+          <p class="contact-number__text">Телефон</p>
+          <p class="contact-number__phone">+998 (93) 399-80-81</p>
+          <p class="contact-number__phone">+998(93) 590-94-94</p>
+        </div>
+        <div class="contact-email">
+          <p class="contact-email__text">Email</p>
+          <p class="contact-email__email">
+            <a href="mailto:info@lakatum.uz" class="contact-email__link">info@lakatum.uz</a>
+          </p>
+        </div>
+        <div class="contact-address">
+          <p class="contact-address__text">Адрес</p>
+          <p class="contact-address__address">Юнусобод, 1 улица м. Тургунбаевой,</p>
+        </div>
+        <div class="contact-social">
+          <p class="contact-social__text">Соц сети</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer__copyright">
+      <p class="footer__copyright-text">Copyright 2019 Lakatum prodaction</p>
+    </div>
+  </footer>
+</body>
+<script src="script.js" defer></script>
+</html>

@@ -1,0 +1,984 @@
+@import './_mixins.scss';
+@import './_vars.scss';
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:wght@500&family=Oswald:wght@500&family=Zilla+Slab:wght@500&display=swap');
+
+@font-face {
+  font-family: 'Gilroy';
+  src: url('/font/Gilroy-Regular.woff2') format('woff2'),
+        url('/font/Gilroy-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Gilroy,sans-serif;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+
+  @include forDesktop {
+    padding: 0 30px;
+  }
+
+  @include forTablet {
+    padding: 0 30px;
+  }
+
+  @include forMobile {
+    padding: 0 20px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.header {
+  @include flexCenter;
+  padding: 43px 0;
+
+  @include forTablet {
+    padding: 30px 0;
+  }
+
+  @include forMobile {
+    padding: 20px 0;
+  }
+
+  &__logo {
+    @include flexCenter;
+
+    &-img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+
+      @include forMobile {
+        margin: 15px 0 0;
+
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &-img > a > img {
+      @include forMobile {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &-name {
+      max-width: 90px;
+
+      @include forMobile {
+        max-width: 70px;
+        margin: 15px 0 0 5px;
+      }
+    }
+
+    &-name > a > :nth-child(1) {
+      @include forStyle(24px, normal, 500);
+      @include forMixStyle('Oswald', italic, uppercase, $logo-color);
+
+      @include forMobile {
+        @include forStyle(16px, normal, 500);
+      }
+    }
+
+    &-name > a > :nth-child(2) {
+      @include forStyle(10px, normal, 300);
+      @include forMixStyle('Oswald', italic, uppercase, $logo-color);
+      letter-spacing: 3.6px;
+
+      @include forMobile {
+        @include forStyle(8px, normal, 300);
+      }
+      letter-spacing: 2.12px;
+    }
+  }
+  &__lang {
+    &-text {
+        @include forStyle(16px, normal, 400);
+        @include forMixStyle('Roboto', normal, capitalize, $lang-color);
+    }
+
+    &-option {
+      border: none;
+    }
+
+    &-option > option {
+      @include forStyle(16px, normal, 400);
+      @include forMixStyle('Roboto', normal, capitalize, $text-color);
+    }
+
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__nav {
+    &__list {
+      @include flexCenter;
+      list-style: none;
+      
+      &-item {
+        margin-right: 30px;
+        cursor: pointer;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        & > a {
+          @include forStyle(16px, normal, 400);
+          @include forMixStyle('Gilroy', normal, capitalize, $text-color);
+        }
+      }
+    }
+
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &__icons {
+    @include flexCenter;
+
+    @include forMobile {
+      margin-top: 15px;
+    }
+
+    &-item {
+      // display: flex;
+      // align-items: center;
+      margin-right: 30px;
+      cursor: pointer;
+
+      &:last-child {
+        margin-right: 0;
+        display: none;
+
+        @include forTablet {
+          display: block;
+        }
+      
+        @include forMobile {
+          display: block;
+
+          width: 21px;
+          height: 16px;
+
+          margin-bottom: 10px;
+        }
+      }
+
+      &-search {
+        @include forTablet {
+          display: none;
+        }
+
+        @include forMobile {
+          display: none;
+        }
+      }
+    }
+
+    &-item img {
+      width: 26px;
+      height: 26px;
+      flex-shrink: 0;
+
+      @include forMobile {
+        width: 17px;
+        height: 17px;
+      }
+    }
+  }
+}
+
+.hr {
+  display: none;
+  width: 100%;
+  height: 1px;
+  background-color: #E5E5E5;
+
+  @include forTablet {
+    display: block;
+  }
+
+  @include forMobile {
+    display: block;
+  }
+}
+
+.slider__container {
+  margin-bottom: 80px;
+
+  @include forDesktop {
+    margin-bottom: 0;
+  }
+
+  @include forTablet {
+    display: none;
+  }
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  height: 500px;
+
+  @include forDesktop {
+    max-height: 500px;
+  }
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  display: none;
+  list-style: none;
+
+  & > img {
+      display: block;
+      max-width: 1200px;
+      // height: 600px;
+      object-fit: cover;
+      object-position: center;
+
+      @include forDesktop {
+        width: 100%;
+        max-height: 100%;
+      }
+  }
+
+  &[data-active] {
+    display: block;
+    transition: opacity 0.3s ease-in-out;
+  }
+}
+
+.carousel-button {
+  position: absolute;
+  z-index: 2;
+  background: none;
+  border: none;
+  font-size: 4rem;
+
+  &.prev {
+    left: -40px;
+    transform: translateY(190%);
+    background-color: #fff;
+
+    width: 90px;
+    height: 90px;
+
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &.next {
+    right: -40px;
+    transform: translateY(190%);
+    background-color: #fff;
+  
+    width: 90px;
+    height: 90px;
+  
+    border-radius: 50%;
+    cursor: pointer;
+  }
+}
+
+/* Main section */
+
+.section__header {
+  max-width: 470px;
+  margin-top: 160px;
+
+  @include forDesktop {
+    margin-top: 0;
+  }
+
+  @include forTablet {
+    margin-top: 30px;
+  }
+
+  @include forMobile {
+    margin-top: 30px;
+  }
+
+  &-theme,
+  &-theme-ave {
+    @include forStyle(36px, 49px, 500);
+    @include forMixStyle('Roboto', normal, none, $text-color);
+
+    @include forTablet {
+      @include forStyle(24px, 30px, 700);
+    }
+
+    @include forMobile {
+      @include forStyle(18px, 24.5px, 700);
+    }
+  }
+
+    &-theme-ave {
+      @include forTablet {
+        display: none;
+      }
+
+      @include forMobile {
+        display: none;
+      }
+    }
+}
+
+.section__filter {
+  &-nav-list {
+    @include flexCenter;
+    list-style: none;
+    margin: 30px 0;
+  }
+
+  &-nav-item {
+    cursor: pointer;
+
+    @include forStyle(16px, normal, 500);
+    @include forMixStyle('Gilroy', normal, uppercase, $text-color);
+
+    @include forTablet {
+      @include forStyle(14px, normal, 500);
+    }
+
+    @include forMobile {
+      @include forStyle(13px, normal, 500);
+    }
+
+    &.active {
+      border-bottom: 5px solid orange;
+      font-weight: 900;
+
+      @include forTablet {
+        border-bottom: 1px solid orange;
+        font-weight: 700;
+      }
+
+      @include forMobile {
+        border-bottom: 1px solid orange;
+        font-weight: 700;
+      }
+    }
+
+    &:nth-child(n + 5) {
+      @include forTablet {
+        display: none;
+      }
+
+      @include forMobile {
+        display: none;
+      }
+    }
+  }
+}
+
+.section__article {
+  border: 2px solid #E5E5E5;
+
+  @include flexCenter;
+  margin-bottom: 70px;
+
+  @include forDesktop {
+    position: relative;
+  }
+
+  @include forTablet {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  @include forMobile {
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+
+  &-img {
+    @include forDesktop {
+      width: 25%;
+    }
+
+    @include forTablet {
+      width: 100%;
+    }
+
+    @include forMobile {
+      width: 100%;
+    }
+  }
+
+  &-img > img {
+    // box-sizing: border-box;
+    // @include forTablet {
+    //   max-width: 100%;
+    // }
+
+    @include forDesktop {
+      max-width: 100%;
+    }
+
+    @include forTablet {
+      width: 100%;
+      height: 300px;
+    }
+
+    @include forMobile {
+      width: 100%;
+      height: 160px;
+    }
+  }
+
+  &-line {
+    width: 1px;
+    height: 454px;
+    background-color: #E5E5E5;
+
+    @include forDesktop {
+      max-height: 300px;
+    }
+
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+
+  &-theme {
+    max-width: 410px;
+
+    @include forDesktop {
+      max-width: 35%;
+    }
+
+    @include forTablet {
+      max-width: 100%;
+    }
+
+    @include forMobile {
+      max-width: 100%;
+    }
+  }
+
+  &-info {
+    width: 215px;
+
+    // @include forMobile {
+    //   width: 100px;
+    //   padding: 0 12px;
+    // }
+
+    display: flex;
+    flex-direction: column;
+
+    @include forTablet {
+      width: 100%;
+      padding: 0 12px;
+
+      position: relative;
+      top: -6em;
+      justify-content: space-between;
+      flex-direction: row;
+
+      margin-bottom: 10px;
+    }
+
+    @include forMobile {
+      width: 100%;
+      padding: 0 12px;
+
+      position: relative;
+      top: -6em;
+
+      // @include flexCenter;
+      justify-content: space-between;
+      flex-direction: row;
+
+      margin-bottom: 10px;
+    }
+  }
+
+  &-block {
+    margin-bottom: 25px;
+
+    @include forTablet {
+      margin-bottom: 10px;
+  
+      &:last-child {
+        display: none;
+      }
+    }
+
+    @include forMobile {
+      margin-bottom: 10px;
+
+      &:last-child {
+        display: none;
+      }
+    }
+  }
+}
+
+.top-theme {
+  @include forStyle(14px, 21px, 300);
+  @include forMixStyle('Gilroy', normal, capitalize, $text-color);
+
+  // @include forDesktop {
+  //   display: none;
+  // }
+
+  @include forTablet {
+    display: none;
+  }
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.main-theme {
+  @include forStyle(24px, 21px, 600);
+  @include forMixStyle('Gilroy', normal, none, $text-color);
+
+  margin: 15px 0;
+
+  @include forDesktop {
+    @include forStyle(20px, 21px, 700);
+    margin: 5px 0;
+  }
+
+  @include forTablet {
+    text-align: center;
+    @include forStyle(20px, 21px, 700);
+  }
+
+  @include forMobile {
+    text-align: center;
+    @include forStyle(18px, 21px, 700);
+  }
+}
+
+.bottom-text {
+  @include forStyle(18px, 30px, 400);
+  @include forMixStyle('Gilroy', normal, none, $text-color);
+
+  @include forDesktop {
+    @include forStyle(16px, 21px, 400);
+    max-width: 300px;
+  }
+
+  @include forTablet {
+    display: none;
+  }
+
+  @include forMobile {
+    display: none;
+  }
+}
+
+.order-ticket-btn {
+  @include forStyle(16px, 24px, 500);
+  @include forMixStyle('Gilroy', normal, capitalize, $text-color);
+
+  // padding: 20px 150px;
+  width: 365px;
+  height: 75px;
+  border: none;
+  // border-radius: 5px;
+  cursor: pointer;
+
+  background-color: #FBCA35;
+  margin-top: 45px;
+
+  @include forDesktop {
+    margin-top: 20px;
+
+    max-width: 100%;
+  }
+
+  @include forTablet {
+    margin-top: 0;
+
+    position: relative;
+    top: 4em;
+
+    max-width: 100%;
+  }
+
+  @include forMobile {
+    margin-top: 0;
+
+    position: relative;
+    top: 4em;
+
+    max-width: 100%;
+  }
+}
+
+.ticket-date-text,
+.ticket-time-text,
+.ticket-price-text,
+.ticket-address-text {
+  @include forStyle(16px, 24px, 500);
+  @include forMixStyle('Gilroy', normal, capitalize, #808080);
+}
+
+.ticket-date,
+.ticket-time,
+.ticket-price,
+.ticket-address {
+  @include forStyle(18px, 27px, 500);
+  @include forMixStyle('Gilroy', normal, none, $text-color);
+
+  @include forTablet {
+    @include forStyle(16px, 23px, 500);
+  }
+
+  @include forMobile {
+    @include forStyle(14px, 21.2px, 500);
+  }
+}
+
+// .ticket-address,
+// .ticket-address-text {
+//   @include forMobile {
+//     display: none;
+//   }
+// }
+
+.footer {
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    // @include flexCenter;
+    display: flex;
+    justify-content: space-between;
+    padding: 43px 0 0;
+
+    @include forDesktop {
+      padding: 20px 20px 50px 20px;
+    }
+
+    @include forTablet {
+      padding: 20px 20px 50px 20px;
+      flex-direction: column;
+    }
+
+    @include forMobile {
+      padding: 20px 20px 50px 20px;
+      flex-direction: column;
+    }
+  }
+
+  background: #C1CBD4;
+
+  margin-top: 200px;
+
+  @include forDesktop {
+    margin-top: 70px;
+  }
+
+  @include forTablet {
+    margin-top: 70px;
+  }
+
+  @include forMobile {
+    margin-top: 70px;
+  }
+
+  &__logo {
+    @include flexCenter;
+
+    @include forTablet {
+      justify-content: flex-start;
+    }
+
+    @include forMobile {
+      justify-content:flex-start;
+    }
+
+    &-img {
+      margin-right: 10px;
+
+      @include forTablet {
+        margin-right: 5px;
+      }
+
+      @include forMobile {
+        margin-right: 5px;
+      }
+    }
+
+    &-img > a > img {
+      @include forTablet {
+        width: 45px;
+        height: 45px;
+      }
+
+      @include forMobile {
+        width: 35px;
+        height: 35px;
+      }
+    }
+
+    &-name {
+      // max-width: 90px;
+      @include forTablet {
+        max-width: 70px;
+        margin-bottom: 5px;
+      }
+
+      @include forMobile {
+        max-width: 70px;
+        margin-bottom: 5px;
+      }
+    }
+
+    &-name> a > :nth-child(1) {
+      @include forStyle(30px, normal, 500);
+      @include forMixStyle('Oswald', italic, uppercase, $logo-color);
+
+      @include forTablet {
+        @include forStyle(20px, normal, 500);
+      }
+
+      @include forMobile {
+        @include forStyle(16px, normal, 500);
+      }
+    }
+
+    &-name> a > :nth-child(2) {
+      @include forStyle(12px, normal, 300);
+      @include forMixStyle('Oswald', italic, uppercase, $logo-color);
+
+      @include forTablet {
+        @include forStyle(9px, normal, 300);
+        letter-spacing: 3px;
+      }
+
+      @include forMobile {
+        @include forStyle(8px, normal, 300);
+        letter-spacing: 2.12px;
+      }
+      letter-spacing: 5.58px;
+    }
+  }
+
+  &__copyright {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 30px;
+    &-text {
+      @include forStyle(12px, normal, 400);
+      @include forMixStyle('Gilroy', normal, none, #797979);
+    }
+
+    @include forDesktop {
+      padding-left: 20px;
+    }
+
+    @include forTablet {
+      display: none;
+    }
+
+    @include forMobile {
+      display: none;
+    }
+  }
+}
+
+.social__media {
+  @include flexCenter;
+
+  margin-top: 40px;
+
+  @include forTablet {
+    display: block;
+
+    position: relative;
+    top: 15em;
+  }
+
+  @include forMobile {
+    display: block;
+
+    position: relative;
+    top: 15em;
+  }
+}
+
+.facebook > a,
+.instagram > a {
+  @include forStyle(14px, 30.3px, 500);
+  @include forMixStyle('Gilroy', normal, uppercase, $text-color);
+
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.facebook > a {
+  @include forTablet {
+    line-height: 0;
+  }
+  
+  @include forMobile {
+    line-height: 2;
+  }
+}
+
+.instagram > a {
+  @include forTablet {
+    line-height: 0;
+  }
+
+  @include forMobile {
+    line-height: 0;
+  }
+}
+
+.footer__nav__list {
+  list-style: none;
+
+  &-link.theme {
+    @include forStyle(18px, 27.3px, 500);
+    @include forMixStyle('Gilroy', normal, capitalize, $text-color);
+  }
+
+  &-item {
+    cursor: pointer;
+
+    & > a:not(.theme) {
+      @include forStyle(14px, 30.3px, 400);
+      @include forMixStyle('Gilroy', normal, capitalize, $text-color);
+    }
+  }
+}
+
+.footer__contact {
+  @include forTablet {
+    position: relative;
+    top: -26em;
+  }
+
+  @include forMobile {
+    position: relative;
+    top: -26em;
+  }
+}
+
+.how-to-buy {
+  @include forTablet {
+    position: relative;
+    top: 13em;
+  }
+
+  @include forMobile {
+    position: relative;
+    top: 13em;
+  }
+}
+
+.about-us {
+  @include forTablet {
+    position: relative;
+    top: 16em;
+  }
+
+  @include forMobile {
+    position: relative;
+    top: 16em;
+  }
+}
+
+// .footer__nav.about-us {
+//   margin-bottom: 80px;
+// }
+
+.contact-number,
+.contact-email,
+.contact-address {
+  margin-bottom: 20px;
+
+  max-width: 160px;
+}
+
+.contact-number__text,
+.contact-email__text,
+.contact-address__text,
+.contact-social__text {
+  @include forStyle(14px, normal, 400);
+  @include forMixStyle('Gilroy', normal, capitalize, #777);
+}
+
+.contact-number__phone,
+.contact-email__link,
+.contact-address__address {
+  @include forStyle(18px, normal, 400);
+  @include forMixStyle('Gilroy', normal, none, $text-color);
+
+  margin-top: 5px;
+}
+
+.contact-social__text {
+  display: none;
+
+  @include forTablet {
+    display: block;
+  }
+
+  @include forMobile {
+    display: block;
+  }
+}
+
+.footer__payment {
+  padding-top: 40px;
+
+  @include forTablet {
+    position: relative;
+    top: 10em;
+  }
+
+  @include forMobile {
+    position: relative;
+    top: 10em;
+  }
+
+  &-payme {
+    @include forMobile {
+      margin-right: 20px;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@mixin forDesktop {
+  @media (max-width: $desktopScreen) {
+    @content;
+  }
+}
+
+@mixin forTablet {
+  @media (max-width: $tabletScreen) and (min-width: $mobileScreen) {
+    @content;
+  }
+}
+
+@mixin forMobile {
+  @media (max-width: $mobileScreen) {
+    @content;
+  }
+}
+
+@mixin imagePosition {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin forStyle($fontSize, $lineHeight, $fontWeight) {
+  font-size: $fontSize;
+  line-height: $lineHeight;
+  font-weight: $fontWeight;
+}
+
+@mixin forMixStyle($fontFamily, $fontStyle, $textTransform, $color) {
+  font-family: $fontFamily, sans-serif;
+  font-style: $fontStyle;
+  text-transform: $textTransform;
+  color: $color;
+}
+
+@mixin imagePosition {
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
