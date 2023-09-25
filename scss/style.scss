@@ -283,7 +283,7 @@ a {
 
   &.prev {
     left: -40px;
-    transform: translateY(190%);
+    transform: translateY(280%);
     background-color: #fff;
 
     width: 90px;
@@ -291,11 +291,15 @@ a {
 
     border-radius: 50%;
     cursor: pointer;
+
+    @include forDesktop {
+      transform: translateY(190%);
+    }
   }
 
   &.next {
     right: -40px;
-    transform: translateY(190%);
+    transform: translateY(280%);
     background-color: #fff;
   
     width: 90px;
@@ -303,6 +307,10 @@ a {
   
     border-radius: 50%;
     cursor: pointer;
+
+    @include forDesktop {
+      transform: translateY(190%);
+    }
   }
 }
 

@@ -314,21 +314,31 @@ a {
 }
 .carousel-button.prev {
   left: -40px;
-  transform: translateY(190%);
+  transform: translateY(280%);
   background-color: #fff;
   width: 90px;
   height: 90px;
   border-radius: 50%;
   cursor: pointer;
 }
+@media (max-width: 1210px) {
+  .carousel-button.prev {
+    transform: translateY(190%);
+  }
+}
 .carousel-button.next {
   right: -40px;
-  transform: translateY(190%);
+  transform: translateY(280%);
   background-color: #fff;
   width: 90px;
   height: 90px;
   border-radius: 50%;
   cursor: pointer;
+}
+@media (max-width: 1210px) {
+  .carousel-button.next {
+    transform: translateY(190%);
+  }
 }
 
 /* Main section */
